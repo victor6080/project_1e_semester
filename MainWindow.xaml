@@ -7,57 +7,57 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="800" ResizeMode="NoResize" Closing="Window_Closing" KeyDown="KeyPress_KeyDown">
     <StackPanel Margin="0">
-        <GroupBox Header="Kies je poort" Margin="1">
+        <GroupBox Header="Kies je poort" Margin="0">
             <ComboBox Name="cbxPortName" Margin="10" SelectionChanged="cbxPortName_SelectionChanged"></ComboBox>
         </GroupBox>
-        <GroupBox Header="pan/tilt speed" Margin="1">
+        <GroupBox Header="pan/tilt speed" Margin="0">
             <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrSpeed"></Slider>
         </GroupBox>
-        <GroupBox Header="Dimmer" Margin="1">
+        <GroupBox Header="Dimmer" Margin="0">
             <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrDimmer"></Slider>
         </GroupBox>
-        <GroupBox Header="Strobe" Margin="1">
+        <GroupBox Header="Strobe" Margin="0">
             <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrStrobe"></Slider>
         </GroupBox>
-        <GroupBox Header="Red" Margin="1">
+        <GroupBox Header="Red" Margin="0">
             <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrRed"></Slider>
         </GroupBox>
-        <GroupBox Header="Green" Margin="1">
+        <GroupBox Header="Green" Margin="0">
             <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrGreen"></Slider>
         </GroupBox>
-        <GroupBox Header="Blue" Margin="1">
+        <GroupBox Header="Blue" Margin="0">
             <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrBleu"></Slider>
         </GroupBox>
-        <GroupBox Header="White" Margin="1">
+        <GroupBox Header="White" Margin="0">
             <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrWhite"></Slider>
         </GroupBox>
-        <GroupBox Header="Pan Tilt Mode (automatic)" Margin="1">
+        <GroupBox Header="Pan Tilt Mode (automatic)" Margin="0">
             <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrPanTiltMode"></Slider>
         </GroupBox>
-        <GroupBox Header="speed automatic pan tilt mode" Margin="1">
+        <GroupBox Header="speed automatic pan tilt mode" Margin="0">
             <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrSnelheidPanTilt"></Slider>
         </GroupBox>
-        <GroupBox Header="colormode (automatic)" Margin="1">
+        <GroupBox Header="colormode (automatic)" Margin="0">
             <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrColorMode"></Slider>
         </GroupBox>
-        <GroupBox Header="speed automatic color mode" Margin="1">
+        <GroupBox Header="speed automatic color mode" Margin="0">
             <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrSnelheidColor"></Slider>
         </GroupBox>
-        <GroupBox Header="info pan" Margin="10">
+        <GroupBox Header="info pan" Margin="0">
             <Label Content="..." x:Name="lblpan"/>
         </GroupBox>
-        <GroupBox Header="info tilt" Margin="10">
+        <GroupBox Header="info tilt" Margin="0">
             <Label Content="..." x:Name="lbltilt"/>
         </GroupBox>
     </StackPanel>

@@ -128,25 +128,46 @@ namespace project_1e_semester
         private void KeyPress_KeyDown(object sender, KeyEventArgs e)
         {
             //toetsen voor op en neer beweging
-            if (e.Key == Key.D & pan <= 254)
+            if (e.Key == Key.D)
             {
                 pan = movinghead.PanMoveRight();
             }
-            if (e.Key == Key.Q & pan >=1)
+            if (e.Key == Key.Q)
             {
                 pan = movinghead.PanMoveLeft();
             }
-            _data[START_ADDRESS + 0] = Convert.ToByte(pan);
-            lblpan.Content = pan;
+            
             //toetsen voor links rechts beweging
-            if (e.Key == Key.Z & tilt <= 254)
+            if (e.Key == Key.Z)
             {
                tilt = movinghead.TiltMoveUp();
             }
-            if (e.Key == Key.S & tilt >= 1)
+            if (e.Key == Key.S)
             {
                tilt = movinghead.TiltMoveDown();
             }
+            if (Keyboard.IsKeyDown(Key.D) && Keyboard.IsKeyDown(Key.Z))
+            {
+                pan = movinghead.PanMoveRight();
+                tilt = movinghead.TiltMoveUp();
+            }
+            if (Keyboard.IsKeyDown(Key.D) && Keyboard.IsKeyDown(Key.S))
+            {
+                pan = movinghead.PanMoveRight();
+                tilt = movinghead.TiltMoveDown();
+            }
+            if (Keyboard.IsKeyDown(Key.Q) && Keyboard.IsKeyDown(Key.S))
+            {
+                pan = movinghead.PanMoveLeft();
+                tilt = movinghead.TiltMoveDown();
+            }
+            if (Keyboard.IsKeyDown(Key.Q) && Keyboard.IsKeyDown(Key.Z))
+            {
+                pan = movinghead.PanMoveLeft();
+                tilt = movinghead.TiltMoveUp();
+            }
+            _data[START_ADDRESS + 0] = Convert.ToByte(pan);
+            lblpan.Content = pan;
             _data[START_ADDRESS + 1] = Convert.ToByte(tilt);
             lbltilt.Content = tilt;
         }
@@ -179,6 +200,13 @@ namespace project_1e_semester
                 sldrGreen.IsEnabled = false;
                 sldrBleu.IsEnabled = false;
                 sldrWhite.IsEnabled = false;
+                sldrSpeed.Value = 0;
+                sldrDimmer.Value = 0;
+                sldrStrobe.Value = 0;
+                sldrRed.Value = 0;
+                sldrGreen.Value = 0;
+                sldrBleu.Value = 0;
+                sldrWhite.Value = 0;
             }
             if (sldrColorMode.Value == 0)
             {
