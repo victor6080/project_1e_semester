@@ -121,7 +121,7 @@ namespace project_1e_semester
         
         private void KeyPress_KeyDown(object sender, KeyEventArgs e)
         {
-            //pijltjes voor op en neer beweging
+            //toetsen voor op en neer beweging
             if (e.Key == Key.Z & pan <= 254)
             {
                 pan = pan + 3;
@@ -132,7 +132,7 @@ namespace project_1e_semester
             }
             _data[START_ADDRESS + 0] = Convert.ToByte(pan);
             lblpan.Content = pan;
-            //pijltjes voor links rechts beweging
+            //toetsen voor links rechts beweging
             if (e.Key == Key.D & tilt <= 254)
             {
                 tilt = tilt + 3;
@@ -163,6 +163,27 @@ namespace project_1e_semester
             _data[START_ADDRESS + 10] = Convert.ToByte(sldrSnelheidPanTilt.Value);
             _data[START_ADDRESS + 11] = Convert.ToByte(sldrColorMode.Value);
             _data[START_ADDRESS + 12] = Convert.ToByte(sldrSnelheidColor.Value);
+
+            if (sldrColorMode.Value > 0)
+            {
+                sldrSpeed.IsEnabled = false;
+                sldrDimmer.IsEnabled = false;
+                sldrStrobe.IsEnabled = false;
+                sldrRed.IsEnabled = false;
+                sldrGreen.IsEnabled = false;
+                sldrBleu.IsEnabled = false;
+                sldrWhite.IsEnabled = false;
+            }
+            if (sldrColorMode.Value == 0)
+            {
+                sldrSpeed.IsEnabled = true;
+                sldrDimmer.IsEnabled = true;
+                sldrStrobe.IsEnabled = true;
+                sldrRed.IsEnabled = true;
+                sldrGreen.IsEnabled = true;
+                sldrBleu.IsEnabled = true;
+                sldrWhite.IsEnabled = true;
+            }
         }
     }
 }
