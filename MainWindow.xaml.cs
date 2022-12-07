@@ -15,12 +15,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using Vives;
 
 namespace project_1e_semester
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
+    
+
     public partial class MainWindow : Window
     {
         SerialPort _serialPort;
@@ -30,6 +34,8 @@ namespace project_1e_semester
         DispatcherTimer _dispatcherTimer;
         int pan;
         int tilt;
+
+        MovingHead movinghead = new MovingHead();
 
         public MainWindow()
         {
@@ -122,24 +128,24 @@ namespace project_1e_semester
         private void KeyPress_KeyDown(object sender, KeyEventArgs e)
         {
             //toetsen voor op en neer beweging
-            if (e.Key == Key.Z & pan <= 254)
+            if (e.Key == Key.D & pan <= 254)
             {
-                pan = pan + 3;
+                pan = movinghead.PanMoveRight();
             }
-            if (e.Key == Key.S & pan >=1)
+            if (e.Key == Key.Q & pan >=1)
             {
-                pan = pan - 3;
+                pan = movinghead.PanMoveLeft();
             }
             _data[START_ADDRESS + 0] = Convert.ToByte(pan);
             lblpan.Content = pan;
             //toetsen voor links rechts beweging
-            if (e.Key == Key.D & tilt <= 254)
+            if (e.Key == Key.Z & tilt <= 254)
             {
-                tilt = tilt + 3;
+               tilt = movinghead.TiltMoveUp();
             }
-            if (e.Key == Key.Q & tilt >= 1)
+            if (e.Key == Key.S & tilt >= 1)
             {
-                tilt = tilt - 3;
+               tilt = movinghead.TiltMoveDown();
             }
             _data[START_ADDRESS + 1] = Convert.ToByte(tilt);
             lbltilt.Content = tilt;
