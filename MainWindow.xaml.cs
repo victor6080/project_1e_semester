@@ -146,6 +146,7 @@ namespace project_1e_semester
             {
                tilt = movinghead.TiltMoveDown();
             }
+            //toetsen om 2 bewegingen tegelijk uit te voeren
             if (Keyboard.IsKeyDown(Key.D) && Keyboard.IsKeyDown(Key.Z))
             {
                 pan = movinghead.PanMoveRight();
@@ -174,11 +175,7 @@ namespace project_1e_semester
 
 
         private void sldr_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            //_data[START_ADDRESS + 0] = Convert.ToByte(pan);
-            //lblpan.Content = pan;
-            //_data[START_ADDRESS + 1] = Convert.ToByte(tilt);
-            //lbltilt.Content = tilt;
+        {   //data lezen van sliders en versturen
             _data[START_ADDRESS + 2] = Convert.ToByte(sldrSpeed.Value);
             _data[START_ADDRESS + 3] = Convert.ToByte(sldrDimmer.Value);
             _data[START_ADDRESS + 4] = Convert.ToByte(sldrStrobe.Value);

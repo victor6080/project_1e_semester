@@ -8,22 +8,22 @@
         Title="MainWindow" Height="900" Width="800" ResizeMode="NoResize" Closing="Window_Closing" KeyDown="KeyPress_KeyDown">
     <StackPanel Margin="0">
         <GroupBox Header="Kies je poort" Margin="0">
-            <ComboBox Name="cbxPortName" Margin="10" SelectionChanged="cbxPortName_SelectionChanged"></ComboBox>
+            <ComboBox Name="cbxPortName" Margin="1" SelectionChanged="cbxPortName_SelectionChanged"></ComboBox>
         </GroupBox>
         <GroupBox Header="pan/tilt speed" Margin="0">
-            <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <Slider Margin="1" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrSpeed"></Slider>
         </GroupBox>
         <GroupBox Header="Dimmer" Margin="0">
-            <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <Slider Margin="1" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrDimmer"></Slider>
         </GroupBox>
         <GroupBox Header="Strobe" Margin="0">
-            <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <Slider Margin="1" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrStrobe"></Slider>
         </GroupBox>
         <GroupBox Header="Red" Margin="0">
-            <Slider Margin="10" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <Slider Margin="1" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                     IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrRed"></Slider>
         </GroupBox>
         <GroupBox Header="Green" Margin="0">
