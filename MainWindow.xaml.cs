@@ -84,7 +84,7 @@ namespace project_1e_semester
                 {
                     _serialPort.PortName = cbxPortName.SelectedItem.ToString();
                     _serialPort.Open();
-
+                    //sliders activeren als er een seriële poort geselecteerd is. 
                     sldrSpeed.IsEnabled = true;
                     sldrDimmer.IsEnabled = true;
                     sldrStrobe.IsEnabled = true;
@@ -99,7 +99,7 @@ namespace project_1e_semester
 
                 }
                 else
-                {
+                {   //sliders deactiveren als er een seriële poort geselecteerd is. 
                     sldrSpeed.IsEnabled = false;
                     sldrDimmer.IsEnabled = false;
                     sldrStrobe.IsEnabled = false;
@@ -127,7 +127,7 @@ namespace project_1e_semester
         
         private void KeyPress_KeyDown(object sender, KeyEventArgs e)
         {
-            //toetsen voor op en neer beweging
+            //toetsen voor op en neer beweging.
             if (e.Key == Key.D)
             {
                 pan = movinghead.PanMoveRight();
@@ -137,7 +137,7 @@ namespace project_1e_semester
                 pan = movinghead.PanMoveLeft();
             }
             
-            //toetsen voor links rechts beweging
+            //toetsen voor links rechts beweging.
             if (e.Key == Key.Z)
             {
                tilt = movinghead.TiltMoveUp();
@@ -146,7 +146,7 @@ namespace project_1e_semester
             {
                tilt = movinghead.TiltMoveDown();
             }
-            //toetsen om 2 bewegingen tegelijk uit te voeren
+            //toetsen om 2 bewegingen tegelijk uit te voeren.
             if (Keyboard.IsKeyDown(Key.D) && Keyboard.IsKeyDown(Key.Z))
             {
                 pan = movinghead.PanMoveRight();
@@ -167,6 +167,7 @@ namespace project_1e_semester
                 pan = movinghead.PanMoveLeft();
                 tilt = movinghead.TiltMoveUp();
             }
+            //verkregen data van de toetsen versturen.
             _data[START_ADDRESS + 0] = Convert.ToByte(pan);
             lblpan.Content = pan;
             _data[START_ADDRESS + 1] = Convert.ToByte(tilt);
@@ -175,7 +176,7 @@ namespace project_1e_semester
 
 
         private void sldr_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {   //data lezen van sliders en versturen
+        {   //data lezen van sliders en versturen.
             _data[START_ADDRESS + 2] = Convert.ToByte(sldrSpeed.Value);
             _data[START_ADDRESS + 3] = Convert.ToByte(sldrDimmer.Value);
             _data[START_ADDRESS + 4] = Convert.ToByte(sldrStrobe.Value);
@@ -189,7 +190,7 @@ namespace project_1e_semester
             _data[START_ADDRESS + 12] = Convert.ToByte(sldrSnelheidColor.Value);
 
             if (sldrColorMode.Value > 0)
-            {
+            {   //sliders manuele kleur instellingen deactiveren als de automatische kleur mode geactiveerd is.
                 sldrSpeed.IsEnabled = false;
                 sldrDimmer.IsEnabled = false;
                 sldrStrobe.IsEnabled = false;
@@ -206,7 +207,7 @@ namespace project_1e_semester
                 sldrWhite.Value = 0;
             }
             if (sldrColorMode.Value == 0)
-            {
+            {   //sliders manuele kleur instellingen activeren als de automatische kleur mode gedeactiveerd is.
                 sldrSpeed.IsEnabled = true;
                 sldrDimmer.IsEnabled = true;
                 sldrStrobe.IsEnabled = true;
