@@ -189,6 +189,19 @@ namespace project_1e_semester
             _data[START_ADDRESS + 11] = Convert.ToByte(sldrColorMode.Value);
             _data[START_ADDRESS + 12] = Convert.ToByte(sldrSnelheidColor.Value);
 
+            lblPanTiltSpeed.Content = sldrSpeed.Value;
+            lblDimmer.Content = sldrDimmer.Value;
+            lblStrobe.Content = sldrStrobe.Value;
+            lblRed.Content = sldrRed.Value;
+            lblGreen.Content = sldrGreen.Value;
+            lblBlue.Content = sldrBleu.Value;
+            lblWhite.Content = sldrWhite.Value;
+            lblPanTiltModeAutomatic.Content = sldrPanTiltMode.Value;
+            lblSpeedPanTiltModeAutomatic.Content = sldrSnelheidPanTilt.Value;
+            lblColorModeAutomatic.Content = sldrColorMode.Value;
+            lblSpeedColorModeAutomatic.Content = sldrSnelheidColor.Value;
+
+
             if (sldrColorMode.Value > 0)
             {   //sliders manuele kleur instellingen deactiveren als de automatische kleur mode geactiveerd is.
                 sldrSpeed.IsEnabled = false;

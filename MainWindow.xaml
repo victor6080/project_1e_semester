@@ -11,49 +11,148 @@
             <GroupBox Header="Kies je poort" Margin="5">
                 <ComboBox Name="cbxPortName" Margin="5" SelectionChanged="cbxPortName_SelectionChanged"></ComboBox>
             </GroupBox>
-            <GroupBox Header="pan/tilt speed" Margin="5">
-                <Slider Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <GroupBox Header="pan/tilt speed (snelheid van de bewegingen)" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Name="lblPanTiltSpeed" Content="0"></Label>
+                    
+                    <Slider Grid.Column="1" Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                         IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrSpeed"></Slider>
+                </Grid>
             </GroupBox>
-            <GroupBox Header="Dimmer" Margin="5">
-                <Slider Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <GroupBox Header="Dimmer (0 = lamp uit, 255 = lamp volledig aan)" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblDimmer" Content="0"></Label>
+
+                    <Slider Grid.Column="1" Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                         IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrDimmer"></Slider>
+                </Grid>
             </GroupBox>
-            <GroupBox Header="Strobe" Margin="5">
-                <Slider Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <GroupBox Header="Strobe (0 = lamp blijft aan, 255 = lamp 'flitst')" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblStrobe" Content="0"></Label>
+
+                    <Slider Grid.Column="1" Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                         IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrStrobe"></Slider>
+                </Grid>
             </GroupBox>
-            <GroupBox Header="Red" Margin="5">
-                <Slider Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <GroupBox Header="Red (0 = geen rood licht, 255 = rood licht volledig aan)" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblRed" Content="0"></Label>
+
+                    <Slider Grid.Column="1" Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                         IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrRed"></Slider>
+                </Grid>
             </GroupBox>
-            <GroupBox Header="Green" Margin="5">
-                <Slider Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <GroupBox Header="Green (0 = geen groen licht, 255 = groen licht volledig aan)" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblGreen" Content="0"></Label>
+
+                    <Slider Grid.Column="1" Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                         IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrGreen"></Slider>
+                </Grid>
             </GroupBox>
-            <GroupBox Header="Blue" Margin="5">
-                <Slider Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <GroupBox Header="Blue (0 = geen blauw licht, 255 = blauw licht volledig aan)" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblBlue" Content="0"></Label>
+
+                    <Slider Grid.Column="1" Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                         IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrBleu"></Slider>
+                </Grid>
             </GroupBox>
-            <GroupBox Header="White" Margin="5">
-                <Slider Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <GroupBox Header="White (0 = geen wit licht, 255 = wit licht volledig aan)" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblWhite" Content="0"></Label>
+
+                    <Slider Grid.Column="1" Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                         IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrWhite"></Slider>
+                </Grid>
             </GroupBox>
-            <GroupBox Header="Pan Tilt Mode (automatic)" Margin="5">
-                <Slider Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <GroupBox Header="Pan Tilt Mode (automatic) (0 = geen functie, 16-128 = automatische modes, 129-255 automatische modes op muziek)" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblPanTiltModeAutomatic" Content="0"></Label>
+
+                    <Slider Grid.Column="1" Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                         IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrPanTiltMode"></Slider>
+                </Grid>
             </GroupBox>
-            <GroupBox Header="speed automatic pan tilt mode" Margin="5">
-                <Slider Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <GroupBox Header="speed automatic pan tilt mode (snelheid automatische modes)" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblSpeedPanTiltModeAutomatic" Content="0"></Label>
+
+                    <Slider Grid.Column="1" Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                         IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrSnelheidPanTilt"></Slider>
+                </Grid>
             </GroupBox>
-            <GroupBox Header="colormode (automatic)" Margin="5">
-                <Slider Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <GroupBox Header="colormode (automatic) (0 = geen functie, 1-138 automatische modes, 139-255 automatische modes op muziek)" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblColorModeAutomatic" Content="0"></Label>
+
+                    <Slider Grid.Column="1" Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                         IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrColorMode"></Slider>
+                </Grid>
             </GroupBox>
-            <GroupBox Header="speed automatic color mode" Margin="5">
-                <Slider Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
+            <GroupBox Header="speed automatic color mode (snelheid automatische modes)" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblSpeedColorModeAutomatic" Content="0"></Label>
+
+                    <Slider Grid.Column="1" Margin="5" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True"
                         IsEnabled="False" ValueChanged="sldr_ValueChanged" Name="sldrSnelheidColor"></Slider>
+                </Grid>
             </GroupBox>
             <GroupBox Header="info pan" Margin="5">
                 <Label Content="..." x:Name="lblpan"/>
